@@ -18,19 +18,11 @@ public class UIParserTool {
 		this.fileAsString = reader.getOutputString();
 	}
 	
-	public void JSONparse() {
+	public ArrayList<ParsedElement> JSONparse() {
 		GeneralParser parser = new MyJSONParser(this.fileAsString);
 		parser.parse();
 		
-		ArrayList<ParsedElement> elements = parser.getParsedElements();
-		for(int i = 0; i < elements.size(); i ++) {
-			System.out.println(ParsedElement.JSON_TYPE + ": " + elements.get(i).getType());
-			System.out.println(ParsedElement.JSON_X + ": " + elements.get(i).getX());
-			System.out.println(ParsedElement.JSON_Y + ": " + elements.get(i).getY());
-			System.out.println(ParsedElement.JSON_WIDTH + ": " + elements.get(i).getWidth());
-			System.out.println(ParsedElement.JSON_HEIGHT + ": " + elements.get(i).getHeight());
-			System.out.println(ParsedElement.JSON_TEXT + ": " + elements.get(i).getText());
-		}
+		return parser.getParsedElements();
 	}
 	
 	public String getFileAsString() {
