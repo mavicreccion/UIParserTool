@@ -11,8 +11,8 @@ import javax.swing.border.EmptyBorder;
 
 public class ParsedView extends JFrame {
 	
-	private static final int FRAME_WIDTH = 1024;
-	private static final int FRAME_HEIGHT = 576;
+	private static final int FRAME_WIDTH = 1366;
+	private static final int FRAME_HEIGHT = 768;
 
 	/**
 	 * 
