@@ -31,10 +31,10 @@ public class MyJSONParser extends GeneralParser {
 				String type = element.getString(ParsedElement.JSON_TYPE);
 				parsedElement.setType(ParsedElementType.getValue(type));
 				
-				parsedElement.setX(element.getDouble(ParsedElement.JSON_X));
-				parsedElement.setY(element.getDouble(ParsedElement.JSON_Y));
-				parsedElement.setWidth(element.getDouble(ParsedElement.JSON_WIDTH));
-				parsedElement.setHeight(element.getDouble(ParsedElement.JSON_HEIGHT));
+				parsedElement.setX(element.getInt(ParsedElement.JSON_X));
+				parsedElement.setY(element.getInt(ParsedElement.JSON_Y));
+				parsedElement.setWidth(element.getInt(ParsedElement.JSON_WIDTH));
+				parsedElement.setHeight(element.getInt(ParsedElement.JSON_HEIGHT));
 				parsedElement.setText(element.getString(ParsedElement.JSON_TEXT));
 				
 				this.parsedElements.add(parsedElement);

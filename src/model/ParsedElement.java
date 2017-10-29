@@ -10,8 +10,8 @@ public class ParsedElement {
 	public static final String JSON_TYPE = "type";
 	
 	private ParsedElementType type;
-	private double x, y;
-	private double width, height;
+	private int x, y;
+	private int width, height;
 	private String text;
 	
 	public ParsedElement() {}
@@ -24,35 +24,35 @@ public class ParsedElement {
 		this.type = type;
 	}
 
-	public double getX() {
+	public int getX() {
 		return x;
 	}
 
-	public void setX(double x) {
+	public void setX(int x) {
 		this.x = x;
 	}
 
-	public double getY() {
+	public int getY() {
 		return y;
 	}
 
-	public void setY(double y) {
+	public void setY(int y) {
 		this.y = y;
 	}
 
-	public double getWidth() {
+	public int getWidth() {
 		return width;
 	}
 
-	public void setWidth(double width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 
-	public double getHeight() {
+	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(double height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 

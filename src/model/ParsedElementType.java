@@ -2,13 +2,13 @@ package model;
 
 public enum ParsedElementType {
 	
-	LABEL, TEXTBOX, BUTTON;
+	LABEL, TEXTFIELD, BUTTON;
 	
 	public static ParsedElementType getValue(String type) {
 		switch(type) {
 		case "label": return LABEL;
 		case "button": return BUTTON;
-		case "textbox": return TEXTBOX;
+		case "textbox": return TEXTFIELD;
 		default: return null;
 		}
 	}

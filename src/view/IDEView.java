@@ -8,10 +8,12 @@ import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -27,6 +29,8 @@ public class IDEView extends JFrame {
 	private JTextArea txtFilename;
 	
 	private Controller controller;
+	
+	private ParsedView parsedView;
 
 	/**
 	 * Create the frame.
@@ -65,7 +69,15 @@ public class IDEView extends JFrame {
 		btnRender.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// open new window
+				// open new window only if there's json file selected
+				if(!textArea.getText().isEmpty()) {
+					parsedView = new ParsedView();
+					parsedView.setVisible(true);
+					
+					controller.render();
+				} else {
+					// show error
+				}
 			}
 		});
 		panel.add(btnRender);
@@ -126,5 +138,17 @@ public class IDEView extends JFrame {
 	
 	public void displayStringFromFile(String fileAsString) {
 		textArea.setText(fileAsString);
+	}
+	
+	public void addLabel(JLabel label) {
+		this.parsedView.addLabel(label);
+	}
+	
+	public void addTextBox(JTextField textbox) {
+		this.parsedView.addTextBox(textbox);
+	}
+	
+	public void addButton(JButton button) {
+		this.parsedView.addButton(button);
 	}
 }

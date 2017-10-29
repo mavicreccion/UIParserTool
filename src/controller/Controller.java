@@ -31,8 +31,10 @@ public class Controller {
 		ArrayList<ParsedElement> elements = model.JSONparse();
 		
 		/* 
-		 * 2. for each parsed element, create a java component with its details
-		 * 		if the parsed element is a button, call addButton of view.
+		 * 	2. for each parsed element, create a java component
+		 *  -- setBounds to set x, y, width, height
+		 *  -- set text when initializing the component
+		 *  -- call particular methods in the view when adding the component
 		*/
 		
 	}
