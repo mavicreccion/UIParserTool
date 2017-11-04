@@ -35,8 +35,7 @@ public class Controller {
 		 *  -- setBounds to set x, y, width, height
 		 *  -- set text when initializing the component
 		 *  -- call particular methods in the view when adding the component
-		*/
-		
+		*/		
 	}
 
 }

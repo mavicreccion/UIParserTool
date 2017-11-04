@@ -36,6 +36,7 @@ public class MyJSONParser extends GeneralParser {
 				parsedElement.setWidth(element.getInt(ParsedElement.JSON_WIDTH));
 				parsedElement.setHeight(element.getInt(ParsedElement.JSON_HEIGHT));
 				parsedElement.setText(element.getString(ParsedElement.JSON_TEXT));
+				parsedElement.setFontsize(element.getInt(ParsedElement.JSON_FONTSIZE));
 				
 				this.parsedElements.add(parsedElement);
 			}

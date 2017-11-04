@@ -24,7 +24,6 @@ public class ParsedView extends JFrame {
 	 * Create the frame.
 	 */
 	public ParsedView() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(10, 10, FRAME_WIDTH, FRAME_HEIGHT);
 		setResizable(false);
 		contentPane = new JPanel();

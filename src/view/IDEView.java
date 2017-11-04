@@ -25,6 +25,9 @@ public class IDEView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
+	private static final int FRAME_WIDTH = 450;
+	private static final int FRAME_HEIGHT = 600;
+	
 	private JPanel contentPane;
 	private JTextArea textArea;
 	private JTextArea txtFilename;
@@ -40,7 +43,7 @@ public class IDEView extends JFrame {
 	
 	public void initGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, FRAME_WIDTH, FRAME_HEIGHT);
 		setResizable(false);
 		setVisible(true);
 		
@@ -53,9 +56,9 @@ public class IDEView extends JFrame {
 		// split pane
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
-		splitPane.setResizeWeight(0.4);
+		splitPane.setResizeWeight(0.25);
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-		splitPane.setBounds(0, 0, 434, 261);
+		splitPane.setBounds(0, 0, FRAME_WIDTH - 16, FRAME_HEIGHT - 39);
 		contentPane.add(splitPane);
 		
 		// pane containing the buttons
@@ -66,7 +69,7 @@ public class IDEView extends JFrame {
 		
 		// buttons
 		JButton btnRender = new JButton("Render");
-		btnRender.setBounds(317, 51, 105, 23);
+		btnRender.setBounds(310, 90, 105, 23);
 		btnRender.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -114,15 +117,12 @@ public class IDEView extends JFrame {
 		
 		// filename of the chosen json files
 		txtFilename = new JTextArea("");
-		txtFilename.setEnabled(false);
-		txtFilename.setBounds(125, 10, 296, 38);
+		txtFilename.setBounds(10, 50, 350, 38);
 		txtFilename.setWrapStyleWord(true);
 		txtFilename.setLineWrap(true);
 		txtFilename.setOpaque(false);
 		txtFilename.setEditable(false);
-		txtFilename.setFocusable(false);
 		txtFilename.setBackground(UIManager.getColor("Label.background"));
-	    txtFilename.setFont(UIManager.getFont("Label.font"));
 	    txtFilename.setBorder(UIManager.getBorder("Label.border"));
 		panel.add(txtFilename);
 		

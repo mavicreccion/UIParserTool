@@ -7,12 +7,14 @@ public class ParsedElement {
 	public static final String JSON_HEIGHT = "height";
 	public static final String JSON_WIDTH = "width";
 	public static final String JSON_TEXT = "text";
+	public static final String JSON_FONTSIZE = "font-size";
 	public static final String JSON_TYPE = "type";
 	
 	private ParsedElementType type;
 	private int x, y;
 	private int width, height;
 	private String text;
+	private int fontsize;
 	
 	public ParsedElement() {}
 
@@ -62,6 +64,14 @@ public class ParsedElement {
 
 	public void setText(String text) {
 		this.text = text;
+	}
+
+	public int getFontsize() {
+		return fontsize;
+	}
+
+	public void setFontsize(int fontsize) {
+		this.fontsize = fontsize;
 	}
 	
 	
