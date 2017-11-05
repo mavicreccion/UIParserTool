@@ -1,8 +1,14 @@
 package controller;
 
+import java.awt.Font;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 import model.ParsedElement;
+import model.ParsedElementType;
 import model.UIParserTool;
 import view.IDEView;
 
@@ -29,6 +35,34 @@ public class Controller {
 		
 		// 1. parse
 		ArrayList<ParsedElement> elements = model.JSONparse();
+		for (int i=0; i < elements.size(); i++)
+		{
+			String type = elements.get(i).getType().toString();
+
+			switch(type)
+			{
+				case "LABEL": 
+					JLabel label = new JLabel();
+					label.setText(elements.get(i).getText());
+					label.setLocation(elements.get(i).getX(), elements.get(i).getY());
+					label.setFont(new Font(label.getFont().getFontName(), Font.PLAIN, 
+							elements.get(i).getFontsize()));
+					label.setSize(elements.get(i).getWidth(),elements.get(i).getHeight());
+					break;
+				case "BUTTON":
+					JButton button = new JButton();
+					button.setText(elements.get(i).getText());
+					button.setLocation(elements.get(i).getX(), elements.get(i).getY());
+					button.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
+					break;
+				case "TEXTFIELD":
+					JTextField textfield = new JTextField();
+					textfield.setText(elements.get(i).getText());
+					textfield.setLocation(elements.get(i).getX(), elements.get(i).getY());
+					textfield.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
+					
+			}
+		}
 		
 		/* 
 		 * 	2. for each parsed element, create a java component
