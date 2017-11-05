@@ -48,20 +48,25 @@ public class Controller {
 					label.setFont(new Font(label.getFont().getFontName(), Font.PLAIN, 
 							elements.get(i).getFontsize()));
 					label.setSize(elements.get(i).getWidth(),elements.get(i).getHeight());
+					view.addLabel(label);
 					break;
 				case "BUTTON":
 					JButton button = new JButton();
 					button.setText(elements.get(i).getText());
 					button.setLocation(elements.get(i).getX(), elements.get(i).getY());
 					button.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
+					view.addButton(button);
 					break;
 				case "TEXTFIELD":
 					JTextField textfield = new JTextField();
 					textfield.setText(elements.get(i).getText());
 					textfield.setLocation(elements.get(i).getX(), elements.get(i).getY());
 					textfield.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
-					
+					view.addTextBox(textfield);
+					break;
 			}
+			
+			
 		}
 		
 		/* 
