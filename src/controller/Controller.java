@@ -36,7 +36,6 @@ public class Controller {
 		ArrayList<ParsedElement> elements = model.JSONparse();
 		for (int i=0; i < elements.size(); i++)
 		{
-			
 			Font f = new Font("ARIAL", Font.PLAIN, elements.get(i).getFontsize());
 			
 			switch(elements.get(i).getType())
@@ -47,6 +46,7 @@ public class Controller {
 					label.setLocation(elements.get(i).getX(), elements.get(i).getY());
 					label.setSize(elements.get(i).getWidth(),elements.get(i).getHeight());
 					label.setFont(f);
+					System.out.println("adding label");
 					view.addLabel(label);
 					break;
 				case BUTTON:
@@ -56,6 +56,7 @@ public class Controller {
 					button.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
 					button.setFont(f);
 					button.setRolloverEnabled(false);
+					System.out.println("adding button");
 					view.addButton(button);
 					break;
 				case TEXTFIELD:
@@ -64,6 +65,7 @@ public class Controller {
 					textfield.setLocation(elements.get(i).getX(), elements.get(i).getY());
 					textfield.setSize(elements.get(i).getWidth(), elements.get(i).getHeight());
 					textfield.setFont(f);
+					System.out.println("adding textfield");
 					view.addTextBox(textfield);
 					break;
 			}
