@@ -7,7 +7,7 @@ public class ParsedElement {
 	public static final String JSON_HEIGHT = "height";
 	public static final String JSON_WIDTH = "width";
 	public static final String JSON_TEXT = "text";
-	public static final String JSON_FONTSIZE = "font-size";
+	public static final String JSON_FONTSIZE = "fontSize";
 	public static final String JSON_TYPE = "type";
 	
 	private ParsedElementType type;
